@@ -62,7 +62,7 @@
       /* Scroll to highlighted element? */
       scrollToElement: true,
       /* Set the overlay opacity */
-      overlayOpacity: 0.8,
+      overlayOpacity: 0.5,
       /* Precedence of positions, when auto is enabled */
       positionPrecedence: ["bottom", "top", "right", "left"],
       /* Disable an interaction with element? */
@@ -1174,7 +1174,12 @@
     };
 
     setTimeout(function() {
-      styleText += 'opacity: ' + self._options.overlayOpacity.toString() + ';';
+      var opacityValue = self._options.overlayOpacity.toString();
+
+      styleText += 'opacity:        		' + opacityValue + ';' +
+                   '-moz-opacity:   		' + opacityValue + ';' +
+                   '-khtml-opacity: 		' + opacityValue + ';' +
+                   'filter: alpha(opacity= ' + opacityValue * 100 + ');';
       overlayLayer.setAttribute('style', styleText);
     }, 10);
 
