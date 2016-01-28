@@ -1177,8 +1177,6 @@
       var opacityValue = self._options.overlayOpacity.toString();
 
       styleText += 'opacity: ' + opacityValue + ';' +
-                   '-moz-opacity: ' + opacityValue + ';' +
-                   '-khtml-opacity: ' + opacityValue + ';' +
                    'filter: alpha(opacity= ' + opacityValue * 100 + ');';
       overlayLayer.setAttribute('style', styleText);
     }, 10);
